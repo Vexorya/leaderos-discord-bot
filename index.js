@@ -36,8 +36,8 @@ client.on('ready', async () => {
   console.log(`BOT: Logged in as ${client.user.username}`);
 
   // Set status
-  client.user.setStatus('online');
-  client.user.setActivity('LEADEROS');
+  client.user.setStatus('dnd');
+  client.user.setActivity('Kendi Dünyanı Yarat!');
 
   // Initialize User Data
   userData.init();

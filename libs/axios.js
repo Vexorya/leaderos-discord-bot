@@ -23,33 +23,6 @@ instance.interceptors.response.use((response) => {
   return response;
 });
 
-// Send message to support ticket
-module.exports.sendTicketMessage = async (
-  ticketID,
-  accountID,
-  isStaff,
-  message
-) => {
-  await instance.post(
-    `/api/support/tickets/${ticketID}/messages`,
-    {
-      userID: accountID,
-      message: message,
-      isAdmin: isStaff.toString(),
-    },
-    {
-      headers: {
-        'Content-Type': 'multipart/form-data',
-      },
-    }
-  );
-};
-
-// Close the support ticket
-module.exports.closeTicket = async (ticketID) => {
-  await instance.post(`/api/support/tickets/${ticketID}/close`);
-};
-
 // Get settings
 module.exports.getSettings = async () => {
   const { data } = await instance.get('/api/integrations/discord/settings');

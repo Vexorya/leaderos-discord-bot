@@ -4,7 +4,7 @@ const userData = require('../utils/userData.js');
 const t = require('../utils/getTranslation.js')();
 
 // Handle command
-exports.run = async (client, interaction) => {
+exports.run = async (_, interaction) => {
   // Get user data from cache
   const userDataCache = await userData.get(interaction.user.id);
 
@@ -47,7 +47,7 @@ exports.run = async (client, interaction) => {
 
 // Register command
 const cmd = new Discord.SlashCommandBuilder()
-  .setName('profile')
+  .setName('profil')
   .setDescription(t.commands.profile.description)
   .setDMPermission(false)
   .setDefaultMemberPermissions(8);

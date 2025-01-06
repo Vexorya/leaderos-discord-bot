@@ -11,7 +11,7 @@ module.exports = async (client) => {
     // Get all users from cache
     const users = Object.entries(await userData.getAll());
     users
-      .filter(([discordUserID, user]) => user.tempRoles.length > 0) // Filter users which have temp roles
+      .filter(([_, user]) => user.tempRoles.length > 0) // Filter users which have temp roles
       .forEach(async ([discordUserID, user]) => {
         // Expired Roles
         const expiredRoles = user.tempRoles.filter(
